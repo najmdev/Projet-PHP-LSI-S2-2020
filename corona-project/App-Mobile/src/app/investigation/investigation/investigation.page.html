@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>investigation</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color="dark" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">
+        Avez-vous été testé pour le corona virus?
+      </ion-label>
+      <ion-select formControlName="question1">
+        <ion-select-option value="Non effectué">
+          Non effectué</ion-select-option>
+        <ion-select-option value="Oui. et le résultat du test est négatif">
+          Oui. et le résultat du test est négatif</ion-select-option>
+        <ion-select-option value="Oui. et en attente du résultat du test">
+          Oui. et en attente du résultat du test</ion-select-option>
+        <ion-select-option value="Oui. et le résultat du test est positif">
+          Oui. et le résultat du test est positif</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">
+        En ce qui concerne l'isolement médical. lequel des éléments suivants s'applique à vous?
+      </ion-label>
+      <ion-select formControlName="question2">
+        <ion-select-option value="Je suis en isolement médical parce que j'ai rencontré une personne contaminée">
+          Je suis en isolement médical parce que j'ai rencontré une personne contaminée
+        </ion-select-option>
+        <ion-select-option value="Je suis en isolement médical parce que j ai des symptômes">
+          Je suis en isolement médical parce que j'ai des symptômes
+        </ion-select-option>
+        <ion-select-option value="Je ne suis pas en isolement médical mais j étais proche de quelqu un en isolement médical">
+          Je ne suis pas en isolement médical mais j'étais proche de quelqu'un en isolement médical
+        </ion-select-option>
+        <ion-select-option value="Je ne suis pas en isolement médical">
+          Je ne suis pas en isolement médical
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Avez-vous actuellement ou avez-vous déjà vécu l'une des situations suivantes? </ion-label>
+      <ion-select formControlName="question3">
+        <ion-select-option value="Insuffisance cardiaque chronique">
+          Insuffisance cardiaque chronique</ion-select-option>
+        <ion-select-option value="Cas précédent de crise cardiaque">
+          Cas précédent de crise cardiaque</ion-select-option>
+        <ion-select-option value="Diabète">
+          Diabète</ion-select-option>
+        <ion-select-option value="Hypertension artérielle">
+          Hypertension artérielle</ion-select-option>
+        <ion-select-option value="Maladie rénale chronique">
+          Maladie rénale chronique</ion-select-option>
+        <ion-select-option value="Maladie pulmonaire chronique">
+          Maladie pulmonaire chronique</ion-select-option>
+        <ion-select-option value="Le cancer">
+          Le cancer</ion-select-option>
+        <ion-select-option value="Système immunitaire affaibli">
+          Système immunitaire affaibli</ion-select-option>
+        <ion-select-option value="Prenez des médicaments anti-immuns">
+          Prenez des médicaments anti-immuns</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Avez-vous eu les symptômes suivants aujourd'hui?
+      </ion-label>
+      <ion-select formControlName="question4">
+        <ion-select-option value="Fièvre supérieure à 38 degrés">
+          Fièvre supérieure à 38 degrés</ion-select-option>
+        <ion-select-option value="Difficulté à respirer">
+          Difficulté à respirer</ion-select-option>
+        <ion-select-option value="Maux d'estomac">
+          Maux d'estomac</ion-select-option>
+        <ion-select-option value="Douleurs musculaires">
+          Douleurs musculaires</ion-select-option>
+        <ion-select-option value="Fatigue ou faiblesse importante">
+          Fatigue ou faiblesse importante</ion-select-option>
+        <ion-select-option value="Congestion nasale ou nez qui coule">
+          Congestion nasale ou nez qui coule</ion-select-option>
+        <ion-select-option value="Inflammation de la gorge">
+          Inflammation de la gorge</ion-select-option>
+        <ion-select-option value="Toux sèche">
+          Toux sèche</ion-select-option>
+        <ion-select-option value="Toux Avec mucus">
+          Toux Avec mucus</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Depuis combien du temps avez-vous toussé ?</ion-label>
+      <ion-input type="text" formControlName="question5"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="ion-margin-top" expand="block" [disabled]="form.invalid">
+      Valider
+    </ion-button>
+  </form>
+</ion-content>

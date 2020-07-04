@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-2"></div>
+    <div class="col-8">
+      <button class="btn btn-primary mt-2 mb-5" routerLink="/register">S'incrire</button>
+      <div *ngIf="alert==true" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Email ou Password incorrect !! </strong>
+        <button (click)="alert=false;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="mForm" [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control"
+          placeholder="Enter email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+        </div>
+        <div class="mx-auto mb-2" style="width: 20%;">
+          <button type="submit" class="center-block btn btn-primary" [disabled]="form.invalid">Se connecter</button>
+        </div>
+        <div *ngIf="submit" class="mx-auto" style="width: 7%;">
+          <div class="spinner-border text-primary" role="status"></div>
+        </div>
+      </form>
+    </div>
+    <div class="offset-2"></div>
+  </div>
+</div>

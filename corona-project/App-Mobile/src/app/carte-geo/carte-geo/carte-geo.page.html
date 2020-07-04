@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Carte Géographique</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="welcome" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map *ngIf="positifsVilles" [latitude]="latitude[1]" [longitude]="longitude[1]" [zoom]="7">
+    <div *ngFor="let ville of positifsVilles; let i=index">
+      <agm-marker [latitude]="latitude[i]" [longitude]="longitude[i]"
+       [label]="{color: 'white', text: ''+ville}"></agm-marker>
+    </div>
+  </agm-map>
+</ion-content>

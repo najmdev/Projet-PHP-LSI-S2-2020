@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color="dark" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">nom</ion-label>
+      <ion-input type="text" formControlName="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">prenom</ion-label>
+      <ion-input type="text" formControlName="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">age</ion-label>
+      <ion-input type="number" formControlName="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">sexe</ion-label>
+      <ion-select formControlName="sexe">
+        <ion-select-option value="Femme">Femme</ion-select-option>
+        <ion-select-option value="Homme">Homme</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">ville</ion-label>
+      <ion-select formControlName="ville">
+        <ion-select-option value="Tanger">Tanger</ion-select-option>
+        <ion-select-option value="Tétouan">Tétouan</ion-select-option>
+        <ion-select-option value="Al Houceima">Al Houceima</ion-select-option>
+        <ion-select-option value="Chefchaouen">Chefchaouen</ion-select-option>
+        <ion-select-option value="Larache">Larache</ion-select-option>
+        <ion-select-option value="Asilah">Asilah</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">adresse</ion-label>
+      <ion-input type="text" formControlName="adresse"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">telephone</ion-label>
+      <ion-input type="text" formControlName="telephone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="obligatoire" position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="ion-margin-top" expand="block" [disabled]="form.invalid">
+      S'inscrire
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,59 @@
+<p class="my-4" style="font-size: 1.6em;">Coronavirus. l'évolution de l'épidémie à la région Tanger-Tétouan-Al Hoceima</p>
+<p style="font-size: 1.4em;">Le bilan du {{today | date : 'fullDate'}}</p>
+<div class="card-deck">
+  <div class="card text-white mb-3 shadow" style="background-color: #f11d31;">
+    <div class="card-body">
+      <h5 class="card-title">Cas Positifs</h5>
+      <h4 class="card-text">{{getNbr('nbrP')}}</h4>
+    </div>
+  </div>
+  <div class="card text-white mb-3 shadow" style="background-color: #2bca4f;">
+    <div class="card-body">
+      <h5 class="card-title">Cas Négatifs</h5>
+      <h4 class="card-text">{{getNbr('nbrN')}}</h4>
+    </div>
+  </div>
+  <div class="card text-white mb-3 shadow" style="background-color: #1fb6ce">
+    <div class="card-body">
+      <h5 class="card-title">Investigations Pas Encore Traitées</h5>
+      <h4 class="card-text">{{getNbr('nbrNT')}}</h4>
+    </div>
+  </div>
+</div>
+
+<div class="card my-5">
+  <div class="card-header bg-light">Statistiques des tests de dépistage du Covid-19</div>
+  <div class="card-body">
+    <canvas id="myChart1"></canvas>
+  </div>
+</div>
+
+<div class="card my-5">
+  <div class="card-header bg-light">Statistiques des tests positifs par ville</div>
+  <div class="card-body">
+    <canvas id="myChart2"></canvas>
+  </div>
+</div>
+
+<div class="card mb-5 mt-5">
+  <div class="card-header bg-light">Coronavirus. Répartition des cas par Ville</div>
+  <div class="card-body">
+    <table *ngIf="villes" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th *ngFor = "let column of headers">
+            {{column}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let nom of noms; let i=index">
+          <td>{{nom}}</td>
+          <td *ngIf="villes[i][1] != undefined">{{villes[i][1]['nbr']}}</td>
+          <td *ngIf="villes[i][1] == undefined">{{villes[i][0]['nbr']}}</td>
+          <td>{{villes[i][0]['nbr']}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

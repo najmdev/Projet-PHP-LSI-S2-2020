@@ -1,0 +1,20 @@
+.bg-light {
+    background-color: rgb(255, 196, 0) !important;
+}
+.sedec {
+    text-align: center;
+    list-style: none;
+}
+.ligne {
+    border-bottom: 2px solid black;
+}
+.nav-link {
+    color: black !important;
+    transition: .2s;
+}
+.nav-link:hover {
+    color:white !important;
+}
+.nav-link:focus {
+    color:white !important;
+}

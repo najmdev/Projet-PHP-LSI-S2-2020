@@ -1,0 +1,73 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-toolbar {
+    --background: rgb(255, 196, 0);
+}
+ion-button {
+    --background: rgb(255, 205, 41); 
+}
+
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+    white-space: normal !important;
+    height: inherit !important;
+}
+
+.alert-wrapper.sc-ion-alert-md,
+.alert-wrapper.sc-ion-alert-ios {
+    max-width: 90% !important;
+}
+
+.agm-map-container-inner {
+    filter: brightness(2.3) !important;
+}
+
+.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
+    display: none !important;
+}
+
+.gm-style-cc {
+    display: none !important;
+}
+
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"] {
+    filter: brightness(.45);
+}
+
+div[draggable] {
+    filter: brightness(.7);
+}
+
+div[style*="border: 1px solid rgba(0, 0, 0, 0.12);"] {
+    display: none !important;
+}
+
+ion-label.obligatoire::before {
+    content: "*  ";
+    color: red;
+}

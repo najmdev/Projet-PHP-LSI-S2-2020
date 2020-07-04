@@ -1,0 +1,25 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <ion-label>
+          <h2 class="ion-margin-bottom">{{getAuthUserName()}}</h2>
+          <div class="sedecDiv" (click)="seDeconnecter()">
+            <ion-icon class="sedecIcon" name="exit-outline"></ion-icon>
+            <span class="sedec">Se déconnecter</span>
+          </div>
+        </ion-label>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-item (click)="goToPage('/investigation')">
+          <ion-icon name="list"></ion-icon>remplir fiche investigation
+        </ion-item>
+        <ion-item (click)="goToPage('/carte-geo')">
+          <ion-icon name="map"></ion-icon>carte géographique
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

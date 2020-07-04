@@ -1,0 +1,18 @@
+<p class="my-4" style="font-size: 1.6em;">Demandes d'investigations traitées : {{getCasT()}}</p>
+<div *ngIf="archive">
+  <table class="rounded table table-striped table-bordered" 
+    *ngFor="let investigation of archive | paginate: { itemsPerPage: 4, currentPage: p }">
+    <tbody>
+      <tr *ngFor="let atr of attributs; let i = index">
+        <th class="w-25">{{ headers[i] }}</th>
+        <td *ngIf="(atr =='id')">{{investigation[atr]}}</td>
+        <td *ngIf="(atr =='updated_at')"> {{dateFormat(investigation[atr])}} </td>
+        <td *ngIf="(atr =='traite')">{{resultat(investigation[atr])}}</td>
+        <!-- <td *ngIf="investigation[atr]==null">n'est pas remplie</td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

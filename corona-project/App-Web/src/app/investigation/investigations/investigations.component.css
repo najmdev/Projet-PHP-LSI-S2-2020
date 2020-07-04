@@ -1,0 +1,46 @@
+.table-bordered {
+    border: 2px solid #b5b5b5
+}
+  
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+  
+.spn-container {
+    width: 30%;
+    height: 24%;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #0e5aad;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+.spinner-grow{
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+  
+.validation {
+  color: #0e5aad;
+  font-size: 1.3em;
+  margin-top: 4%;
+}
+  
+.refresh {
+    width: 60%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 8%;
+    z-index: 1;
+}
